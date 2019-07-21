@@ -7,9 +7,7 @@
     </head>
     <body>
         <header>
-                <div style="width: 200px; float:right; "><a href="me.html" style="text-align: right;">About Me</a></div>
-            <div style="width: 45%"><h1>Hantama's Blog</h1></div>
-            
+            <h1>Hantama's Blog</h1>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Category</a></li>
@@ -22,11 +20,7 @@
 
         </footer>
         <script>
-            let renderedString=""
-            postList.forEach(post => {
-                renderedString+="<a href='post.html'><div  class='postls'>"+post.getTitle()+""+post.getDescription()+"</div></a>"
-            });
-            document.getElementById("main").innerHTML=renderedString//ReactNative.getPost()
+            document.getElementById("main").innerHTML=ReactNative.getPost()
         </script>
     </body>
 </html>
