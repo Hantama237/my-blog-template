@@ -2,20 +2,28 @@
 <html lang="en">
     <head>
         <script src="script/post.js"></script>
+        <script src="mypost/mypost.js"></script>
         <link href="style/mycss.css" rel="stylesheet" type="text/css">
         <title>Hantexts</title>
     </head>
     <body>
             <header>
-                    <div style="width: 200px; float:right; "><a href="me.html" style="text-align: right;">About Me</a></div>
-                <div style="width: 45%"><h1>Hantama's Blog</h1></div>
-                
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li><a href="#">About Me</a></li>
-                </ul>
-            </header>
+                    <div id="me" style=""><a href="me.html" style="text-align: right;">About Me</a></div>
+                    <div style="width: 45%"><h1>Hantama's Blog</h1></div>
+                    
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <div class="dropdown">
+                                <button class="dropbtn">Category List
+                                </button>
+                                <div id="categories" class="dropdown-content">
+                                  <a href="#">Link 1</a>
+                                  <a href="#">Link 2</a>
+                                  <a href="#">Link 3</a>
+                                </div>
+                              </div> 
+                    </ul>
+                </header>
         <div class="container">
             <main id="main">
             </main>
@@ -26,6 +34,13 @@
         <script>
             const urlParams = new URLSearchParams(window.location.search);
             const myParam = urlParams.get('id');
+
+            let renderedString=""
+            categoryList.forEach(category => {
+                renderedString+="<a href='list-by-category.html?category="+category+"'>"+category+"</a>"
+            });
+            document.getElementById('categories').innerHTML=renderedString
+            
             let rederedPost=postList[parseInt(myParam)]
             document.getElementById("main").innerHTML=rederedPost.getPost()
         </script>

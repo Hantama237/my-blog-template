@@ -1,7 +1,7 @@
 body{
     width: 100%;
-    background-color: #98d6ed;
-    background-repeat: no-repeat;
+    background-color: #ffffff;
+    background-repeat: repeat;
     background-attachment: fixed;
     font-family: Verdana, Geneva, sans-serif;
     background-image: url("../assets/img/back.JPEG");
@@ -40,13 +40,47 @@ header a {
     text-decoration: none;
   }
 header #me{
-    float: right;
+    width: 200px; float:right; 
+   
 }
+header .active{
+    background-color: #d9f5ffaf;
+}
+@keyframes example {
+    from {background-color: #d9f5ff81;}
+    to {background-color: #d9f5ffaf;}
+  }
   
   /* Change the link color to #111 (black) on hover */
-header ul a:hover {
-background-color: #a0ddfa;
+header ul a:hover,header .dropdown:hover .dropbtn {
+background-color: #d9f5ff81;
+animation-name: example;
+animation-duration: 2s;
 }
+header .dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #d9f5ffd5;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+header .dropdown:hover .dropdown-content{
+    display: block;
+}
+
+header .dropdown{
+    float: left;
+    overflow: hidden;
+}
+header .dropbtn{
+    border: none;
+    outline: none;
+    font-size: inherit;
+    padding: 14px 16px;
+    background-color: #0088b900;
+}
+
+
+
 
 main ol{
     padding: 0;
@@ -54,7 +88,7 @@ main ol{
 }
 
 main a:hover{
-    color: rgb(0, 204, 255);
+    color: rgb(0, 114, 143);
     text-decoration: none;
 }
 main a{
@@ -69,7 +103,7 @@ main .postimg{
     border-radius: 10px;
 }
 pre{
-    background-color: rgba(250, 235, 215, 0.349);
+    background-color: rgba(247, 247, 247, 0.349);
     border-radius: 5px;
     padding: 10px;
     overflow-x: scroll;
