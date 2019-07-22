@@ -6,25 +6,33 @@
         <title>Hantexts</title>
     </head>
     <body>
-        <header>
-                <div style="width: 200px; float:right; "><a href="me.html" style="text-align: right;">About Me</a></div>
-            <div style="width: 45%"><h1>Hantama's Blog</h1></div>
-            
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Category</a></li>
-                <li><a href="#">About Me</a></li>
-            </ul>
-        </header>
-        <main id="main">
-        </main>
+        <div class="container">
+            <header>
+                    <div style="width: 200px; float:right; "><a href="me.html" style="text-align: right;">About Me</a></div>
+                <div style="width: 45%"><h1>Hantama's Blog</h1></div>
+                
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Category</a></li>
+                    <li><a href="#">About Me</a></li>
+                </ul>
+            </header>
+            <main id="main">
+                
+            </main>
+        </div>
         <footer>
 
         </footer>
         <script>
             let renderedString=""
+            let index=0
             postList.forEach(post => {
-                renderedString+="<a href='post.html'><div  class='postls'>"+post.getTitle()+""+post.getDescription()+"</div></a>"
+                renderedString+="<a href='post.html?id="+
+                                index+"'><div  class='postls'>"+
+                                post.getTitle()+""+
+                                post.getDescription()+"</div></a>"
+                index++
             });
             document.getElementById("main").innerHTML=renderedString//ReactNative.getPost()
         </script>

@@ -6,21 +6,28 @@
         <title>Hantexts</title>
     </head>
     <body>
-        <header>
-            <h1>Hantama's Blog</h1>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Category</a></li>
-                <li><a href="#">About Me</a></li>
-            </ul>
-        </header>
-        <main id="main">
-        </main>
+            <header>
+                    <div style="width: 200px; float:right; "><a href="me.html" style="text-align: right;">About Me</a></div>
+                <div style="width: 45%"><h1>Hantama's Blog</h1></div>
+                
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Category</a></li>
+                    <li><a href="#">About Me</a></li>
+                </ul>
+            </header>
+        <div class="container">
+            <main id="main">
+            </main>
+        </div>
         <footer>
 
         </footer>
         <script>
-            document.getElementById("main").innerHTML=ReactNative.getPost()
+            const urlParams = new URLSearchParams(window.location.search);
+            const myParam = urlParams.get('id');
+            let rederedPost=postList[parseInt(myParam)]
+            document.getElementById("main").innerHTML=rederedPost.getPost()
         </script>
     </body>
 </html>

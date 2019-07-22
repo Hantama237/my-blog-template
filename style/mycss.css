@@ -1,23 +1,31 @@
 body{
     width: 100%;
     background-color: #98d6ed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: Verdana, Geneva, sans-serif;
+    background-image: url("../assets/img/back.JPEG");
 }
 #main{
-    margin: auto;
+    background-color: #d9f5ff81;
+    border-radius: 10px;
     padding: 10px;
+}
+.container{
+    margin: auto;
     max-width: 800px;
 }
 header{
     margin: auto;
-    max-width: 810px;
+    margin-bottom: 10px;
+    max-width: 800px;
 }
 header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #d9f5ff;
+    background-color: #d9f5ff81;
     border-radius: 10px
   }
   
@@ -37,7 +45,7 @@ header #me{
   
   /* Change the link color to #111 (black) on hover */
 header ul a:hover {
-background-color: #a1a1a1;
+background-color: #a0ddfa;
 }
 
 main ol{
@@ -46,10 +54,23 @@ main ol{
 }
 
 main a:hover{
-    color: rgb(57, 88, 97);
+    color: rgb(0, 204, 255);
     text-decoration: none;
 }
 main a{
 color: black;
 text-decoration: none;
+}
+main .link{   
+    color: #0088b9;
+}
+main .postimg{
+    margin: 20px;
+    border-radius: 10px;
+}
+pre{
+    background-color: rgba(250, 235, 215, 0.349);
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: scroll;
 }
